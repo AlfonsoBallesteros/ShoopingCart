@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.shopping.cart"
+    },
+    "jhipsterVersion": "6.10.3",
+    "applicationType": "monolith",
+    "baseName": "shoppingCart",
+    "packageName": "com.shopping.cart",
+    "packageFolder": "com/shopping/cart",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "mongodb",
+    "devDatabaseType": "mongodb",
+    "prodDatabaseType": "mongodb",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "MDg4ZTdlOWYwNjcwZTQ2OTc4YjEyMmQ5OWVmNDQ2MTBkOWFlYWMwMzIxMTkwMGUyMmIwMDZhZDM1YjFiNWMyNDczOGM4NWQ2YTI3N2IzYjg3M2ZjZTQxNTFkOTk0N2RmNjY4MTg4MmQ2NWY5NGUwOTJmNDk5NDA1OTcxMTcxOWE=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "react",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "creationTimestamp": 1615603613642,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "blueprints": []
+  }
+}
