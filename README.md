@@ -1,7 +1,5 @@
 # shoppingCart
 
-This application was generated using JHipster 6.10.3, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v6.10.3](https://www.jhipster.tech/documentation-archive/v6.10.3).
-
 ## Development
 
 Before you can build this project, you must install and configure the following dependencies on your machine:
@@ -70,8 +68,6 @@ npm install --save-dev --save-exact @types/leaflet
 Then you would import the JS and CSS files specified in library's installation instructions so that [Webpack][] knows about them:
 Note: There are still a few other things remaining to do for Leaflet that we won't detail here.
 
-For further instructions on how to develop with JHipster, have a look at [Using JHipster in development][].
-
 ## Building for production
 
 ### Packaging as jar
@@ -96,8 +92,6 @@ java -jar target/*.jar
 ```
 
 Then navigate to [http://localhost:8080](http://localhost:8080) in your browser.
-
-Refer to [Using JHipster in production][] for more details.
 
 ### Packaging as war
 
@@ -185,13 +179,8 @@ For more information refer to [Using Docker and Docker-Compose][], this page als
 
 ## Continuous Integration (optional)
 
-To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`), this will let you generate configuration files for a number of Continuous Integration systems. Consult the [Setting up Continuous Integration][] page for more information.
+To configure CI for your project, run the ci-cd sub-generator, this will let you generate configuration files for a number of Continuous Integration systems. Consult the page for more information.
 
-[jhipster homepage and latest documentation]: https://www.jhipster.tech
-[jhipster 6.10.3 archive]: https://www.jhipster.tech/documentation-archive/v6.10.3
-[using jhipster in development]: https://www.jhipster.tech/documentation-archive/v6.10.3/development/
-[using docker and docker-compose]: https://www.jhipster.tech/documentation-archive/v6.10.3/docker-compose
-[using jhipster in production]: https://www.jhipster.tech/documentation-archive/v6.10.3/production/
 [running tests page]: https://www.jhipster.tech/documentation-archive/v6.10.3/running-tests/
 [code quality page]: https://www.jhipster.tech/documentation-archive/v6.10.3/code-quality/
 [setting up continuous integration]: https://www.jhipster.tech/documentation-archive/v6.10.3/setting-up-ci/

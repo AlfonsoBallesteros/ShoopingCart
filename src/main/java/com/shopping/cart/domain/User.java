@@ -21,7 +21,7 @@ import java.util.Set;
 /**
  * A user.
  */
-@org.springframework.data.mongodb.core.mapping.Document(collection = "jhi_user")
+@org.springframework.data.mongodb.core.mapping.Document(collection = "user")
 public class User extends AbstractAuditingEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;

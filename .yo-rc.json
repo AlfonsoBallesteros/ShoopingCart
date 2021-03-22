@@ -36,5 +36,10 @@
     "otherModules": [],
     "enableTranslation": false,
     "blueprints": []
+  },
+  "generator-jhipster-entity-audit": {
+    "auditFramework": "javers",
+    "auditPage": false,
+    "lastLiquibaseTimestamp": 1615688271000
   }
 }

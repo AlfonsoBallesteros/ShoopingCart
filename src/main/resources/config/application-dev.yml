@@ -39,6 +39,7 @@ spring:
     mongodb:
       uri: mongodb://localhost:27017
       database: shoppingCart
+      auto-index-creation: false
   mail:
     host: localhost
     port: 25

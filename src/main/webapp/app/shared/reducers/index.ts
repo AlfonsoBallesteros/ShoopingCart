@@ -11,6 +11,22 @@ import activate, { ActivateState } from 'app/modules/account/activate/activate.r
 import password, { PasswordState } from 'app/modules/account/password/password.reducer';
 import settings, { SettingsState } from 'app/modules/account/settings/settings.reducer';
 import passwordReset, { PasswordResetState } from 'app/modules/account/password-reset/password-reset.reducer';
+// prettier-ignore
+import product, {
+  ProductState
+} from 'app/entities/product/product.reducer';
+// prettier-ignore
+import sale, {
+  SaleState
+} from 'app/entities/sale/sale.reducer';
+// prettier-ignore
+import order, {
+  OrderState
+} from 'app/entities/order/order.reducer';
+// prettier-ignore
+import store, {
+  StoreState
+} from 'app/entities/store/store.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 export interface IRootState {
@@ -23,6 +39,10 @@ export interface IRootState {
   readonly passwordReset: PasswordResetState;
   readonly password: PasswordState;
   readonly settings: SettingsState;
+  readonly product: ProductState;
+  readonly sale: SaleState;
+  readonly order: OrderState;
+  readonly store: StoreState;
   /* jhipster-needle-add-reducer-type - JHipster will add reducer type here */
   readonly loadingBar: any;
 }
@@ -37,6 +57,10 @@ const rootReducer = combineReducers<IRootState>({
   passwordReset,
   password,
   settings,
+  product,
+  sale,
+  order,
+  store,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
   loadingBar,
 });

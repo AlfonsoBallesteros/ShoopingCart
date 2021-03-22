@@ -1,6 +1,7 @@
 package com.shopping.cart.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.javers.core.metamodel.annotation.DiffIgnore;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
@@ -21,21 +22,25 @@ public abstract class AbstractAuditingEntity implements Serializable {
     @CreatedBy
     @Field("created_by")
     @JsonIgnore
+    @DiffIgnore
     private String createdBy;
 
     @CreatedDate
     @Field("created_date")
     @JsonIgnore
+    @DiffIgnore
     private Instant createdDate = Instant.now();
 
     @LastModifiedBy
     @Field("last_modified_by")
     @JsonIgnore
+    @DiffIgnore
     private String lastModifiedBy;
 
     @LastModifiedDate
     @Field("last_modified_date")
     @JsonIgnore
+    @DiffIgnore
     private Instant lastModifiedDate = Instant.now();
 
     public String getCreatedBy() {

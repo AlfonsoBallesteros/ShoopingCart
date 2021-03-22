@@ -1,0 +1,47 @@
+
+
+
+entity Product{
+	code String
+	name String
+    stock Integer
+    detail String
+    price BigDecimal
+    image String
+}
+
+entity Sale{
+	code String
+    date Instant
+    medioPago String
+    subTotal Integer
+    total Integer
+    state Boolean
+}
+
+entity Order{
+	count Integer
+    subTotal Integer
+    total Integer
+    state Boolean
+}
+
+entity Store{
+	date Instant
+    quantity Integer
+    move String
+}
+
+relationship OneToMany {
+	Sale to Order{sale}
+}
+
+relationship ManyToOne {
+    Order{product} to Product
+    Store{product} to Product
+}
+
+paginate * with pagination
+service * with serviceClass
+dto * with mapstruct
+filter *
