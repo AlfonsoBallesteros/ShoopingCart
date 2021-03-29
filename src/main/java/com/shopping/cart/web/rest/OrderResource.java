@@ -122,4 +122,18 @@ public class OrderResource {
         orderService.delete(id);
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id)).build();
     }
+
+    /**
+     * {@code GET  /orders/:id} : get the "id" order.
+     *
+     * @param id the id of the orderDTO to retrieve.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the orderDTO, or with status {@code 404 (Not Found)}.
+     */
+    @GetMapping("/orders-sale/{id}")
+    public ResponseEntity<List<OrderDTO>> getOrderSale(@PathVariable String id, Pageable pageable) {
+        log.debug("REST request to get Order : {}", id);
+        Page<OrderDTO> page = orderService.findOneSale(id, pageable);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
+        return ResponseEntity.ok().headers(headers).body(page.getContent());
+    }
 }

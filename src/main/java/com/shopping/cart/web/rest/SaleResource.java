@@ -13,7 +13,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -121,5 +120,38 @@ public class SaleResource {
         log.debug("REST request to delete Sale : {}", id);
         saleService.delete(id);
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id)).build();
+    }
+
+    @PostMapping("/new-sales/{id}")
+    public ResponseEntity<SaleDTO> NewSales(@PathVariable String id) throws URISyntaxException {
+        log.debug("REST request to get other Sale : {}", id);
+        Optional<SaleDTO> saleDTO = saleService.findOne(id);
+        saleDTO.map(sale -> {
+            sale.setState(false);
+            return saleService.save(sale);
+        }).orElse(null);
+        SaleDTO result = saleDTO.map(newSale  ->{
+            newSale.setId("");
+            newSale.setState(true);
+            return saleService.save(newSale);
+        }).orElse(null);
+        assert result != null;
+        return ResponseEntity.created(new URI("/api/new-sales/" + result.getId()))
+            .headers(HeaderUtil.createEntityCreationAlert(applicationName, false, ENTITY_NAME, result.getId()))
+            .body(result);
+    }
+
+    /**
+     * {@code GET  /sales} : get all the sales.
+     *
+     * @param pageable the pagination information.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of sales in body.
+     */
+    @GetMapping("/sales-orders")
+    public ResponseEntity<List<SaleOrderDTO>> getAllSalesOrder(Pageable pageable) {
+        log.debug("REST request to get a page of Sales");
+        Page<SaleOrderDTO> page = saleService.findAllOrder(pageable);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
+        return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
 }

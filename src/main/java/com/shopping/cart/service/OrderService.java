@@ -77,4 +77,15 @@ public class OrderService {
         log.debug("Request to delete Order : {}", id);
         orderRepository.deleteById(id);
     }
+    /**
+     * Get one order by id.
+     *
+     * @param id the id of the entity.
+     * @return the entity.
+     */
+    public Page<OrderDTO> findOneSale(String id, Pageable pageable) {
+        log.debug("Request to get Order : {}", id);
+        return orderRepository.findAllBySale(id, pageable)
+            .map(orderMapper::toDto);
+    }
 }
